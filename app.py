@@ -29,7 +29,11 @@ def createEmail(body,email):
         subject="Introductory Email from our CEO , specially curated for you!",
         html_content=body
     )
-    response=sg.send(email)
+     try:
+        response=sg.send(email)
+    except:
+        status_code=401
+        return status_code
     return response.status_code
 
 @app.route("/",methods=["GET"])
