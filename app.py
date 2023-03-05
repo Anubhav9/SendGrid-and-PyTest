@@ -29,7 +29,8 @@ def createEmail(body,email):
         subject="Introductory Email from our CEO , specially curated for you!",
         html_content=body
     )
-     try:
+    
+    try:
         response=sg.send(email)
     except:
         status_code=401
